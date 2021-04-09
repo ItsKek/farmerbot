@@ -38,12 +38,15 @@ print('''
 \033[96m===============
 ''')
 print('''
-\033[35m===========================================================
+\033[35m===============================================================
 \033[96mЛИСТ КОМАНД
 \033[96m[У ВСЕХ КОМАНД ЕСТЬ АНТИБАН]
+\033[96mEbrawl - фарм ОБЫЧНЫХ ящиков в боте BrawlBox на сервере Every
+\033[96mEbrawlB - фарм БОЛЬШИХ ящиков в боте BrawlBox на сервере Every
+\033[96mEbrawlM - фарм МЕГА ящиков в боте BrawlBox на сервере Every
 \033[96mbrawl - фарм ОБЫЧНЫХ ящиков в боте BrawlBox
-\033[96mbrawlM - фарм МЕГА ящиков в боте BrawlBox
 \033[96mbrawlB - фарм БОЛЬШИХ ящиков в боте BrawlBox
+\033[96mbrawlM - фарм МЕГА ящиков в боте BrawlBox
 \033[96mmine - фарм в IdleMiner
 \033[96mdisboard - фарм бампов в disboard
 \033[96mender - фарм в EnberBot
@@ -51,7 +54,7 @@ print('''
 \033[96m[Прописывает команды - !work, !crime, !slut, !depall]
 \033[96mwork - работа в UnbelievaBoat
 \033[96m[Прописывает команды - !work, !depall]
-\033[35m============================================================
+\033[35m================================================================
 ''')
 
 @b.event 
@@ -60,7 +63,7 @@ async def on_message(message):
     if message.content == "mine":
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начало фарма в Idle Miner... (Используется префикс ;) \n")
+        print(f"\n\033[96m[IdleMiner] Начало фарма в Idle Miner... (Используется префикс ;) \n")
 
         mtn1 = time.time()
         mtn2 = mtn1 + 1800
@@ -78,49 +81,49 @@ async def on_message(message):
                 await message.channel.send(";rebirth")
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
-                print(f"\033[31m[{current_time}]: Попытался сделать ребитх")
+                print(f"\033[96m[Idle Miner] Попытался сделать ребитх")
                 mtn2 = mtn2 + 1800
 
             await message.channel.send(";s")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[0m[{current_time}]: Продал вещи")
+            print(f"\033[96m[Idle Miner] Продал вещи")
             time.sleep(1)
             await message.channel.send(";hunt")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[33m[{current_time}]: Запустил охоту")
+            print(f"\033[96m[Idle Miner] Запустил охоту")
             time.sleep(temps)                              #1m
             await message.channel.send(";s")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"[{current_time}]: Продал вещи")
+            print(f"\033[96m[Idle Miner] Продал вещи")
             time.sleep(temps)                              #1m
             await message.channel.send(";up p max")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[34m[{current_time}]: Прокачал кирку ")
+            print(f"\033[96m[Idle Miner] Прокачал кирку ")
             time.sleep(temps)                              #1m
             await message.channel.send(";s ")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[0m[{current_time}]: Продал вещи")
+            print(f"\033[96m[Idle Miner] Продал вещи")
             time.sleep(temps)                              #1m
             await message.channel.send(";s")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"[{current_time}]: Продал вещи")
+            print(f"\033[96m[Idle Miner] Продал вещи")
             time.sleep(temps)                              #1m
             await message.channel.send(";up b max")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[34m[{current_time}]: Прокочал рюкзак ")
+            print(f"\033[96m[Idle Miner] Прокачал рюкзак ")
             time.sleep(temps)
 
     if message.content == "brawl":
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начало фарма в BrawlBox используя обычные ящики... \n")
+        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox используя обычные ящики... \n")
 
         mtn1 = time.time()
         mtn2 = mtn1 + 5
@@ -134,23 +137,17 @@ async def on_message(message):
     
             mtn3 = time.time()
 
-            if mtn3 > mtn2:
-                await message.channel.send("-b")
-                now = datetime.now()
-                current_time = now.strftime("%H:%M:%S")
-                print(f"\033[31m[{current_time}]: Открыл обычный ящик")
-                mtn2 = mtn2 + 5
 
             await message.channel.send("-b")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[0m[{current_time}]: Открыл обычный ящик")
+            print(f"\033[35m[BrawlBox]: Открыл обычный ящик")
             time.sleep(temps)                              #1m
 
     if message.content == "brawlB":
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начало фарма в BrawlBox используя большие ящики... \n")
+        print(f"\n\033[96m[BrawlBox]: Начало фарма в BrawlBox используя большие ящики... \n")
 
         mtn1 = time.time()
         mtn2 = mtn1 + 5
@@ -164,23 +161,85 @@ async def on_message(message):
     
             mtn3 = time.time()
 
-            if mtn3 > mtn2:
-                await message.channel.send("-b")
-                now = datetime.now()
-                current_time = now.strftime("%H:%M:%S")
-                print(f"\033[31m[{current_time}]: Открыл большой ящик")
-                mtn2 = mtn2 + 5
-
             await message.channel.send("-b")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[0m[{current_time}]: Открыл большой ящик")
+            print(f"\033[35m[BrawlBox]: Открыл большой ящик")
             time.sleep(temps)
 
     if message.content == "brawlM":
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начало фарма в BrawlBox используя мега ящики... \n")
+        print(f"\n\033[96m[BrawlBox]: Начало фарма в BrawlBox используя мега ящики... \n")
+
+        mtn1 = time.time()
+        mtn2 = mtn1 + 5
+
+        while True:
+
+            # anti ban
+            tempsN = 1
+            add = random.randint(1,2)
+            temps = (tempsN + add)
+    
+            mtn3 = time.time()
+
+            await message.channel.send("-b")
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            print(f"\033[96m[BrawlBox]: Открыл мега ящик")
+            time.sleep(temps)
+
+    if message.content == "Ebrawl":
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox на сервере Every используя обычные ящики... \n")
+
+        mtn1 = time.time()
+        mtn2 = mtn1 + 5
+
+        while True:
+
+            # anti ban
+            tempsN = 1
+            add = random.randint(1,2)
+            temps = (tempsN + add)
+    
+            mtn3 = time.time()
+
+            await message.channel.send(".b")
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            print(f"\033[96m[BrawlBox] Открыл обычный ящик")
+            time.sleep(temps)                              #1m
+
+    if message.content == "EbrawlB":
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox на сервере Every используя большие ящики... \n")
+
+        mtn1 = time.time()
+        mtn2 = mtn1 + 5
+
+        while True:
+
+            # anti ban
+            tempsN = 1
+            add = random.randint(1,2)
+            temps = (tempsN + add)
+    
+            mtn3 = time.time()
+
+            await message.channel.send(".b")
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            print(f"\033[96m[BrawlBox] Открыл большой ящик")
+            time.sleep(temps)
+
+    if message.content == "EbrawlM":
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox на сервере Every используя мега ящики... \n")
 
         mtn1 = time.time()
         mtn2 = mtn1 + 5
@@ -195,22 +254,22 @@ async def on_message(message):
             mtn3 = time.time()
 
             if mtn3 > mtn2:
-                await message.channel.send("-b")
+                await message.channel.send(".b")
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
-                print(f"\033[31m[{current_time}]: Открыл мега ящик")
+                print(f"\033[31m[BrawlBox] Открыл мега ящик")
                 mtn2 = mtn2 + 5
 
-            await message.channel.send("-b")
+            await message.channel.send(".b")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"\033[0m[{current_time}]: Открыл мега ящик")
+            print(f"\033[31m[BrawlBox] Открыл мега ящик")
             time.sleep(temps)
 
     if message.content == "ender":
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Запуск фарма в EnderBot... \n")
+        print(f"\n\033[31m[EnderBot] Запуск фарма в EnderBot... \n")
 
         mtn1 = time.time()
         mtn2 = mtn1 + 3600
@@ -220,14 +279,14 @@ async def on_message(message):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         await message.channel.send(">hourly")
-        print(f"\033[34m[{current_time}]: Получил часовую награду")
+        print(f"\033[31m[EnderBot] Получил часовую награду")
         time.sleep(2)
         await message.channel.send(">mine all")
-        print(f"\033[34m[{current_time}]: Выкопал все")
+        print(f"\033[31m[EnderBot] Выкопал все")
         await message.channel.send(">daily")
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\033[31m[{current_time}]: Получил дневную награду")
+        print(f"\033[31m[EnderBot] Получил дневную награду")
 
         while True:
             mtn3 = time.time()
@@ -237,17 +296,17 @@ async def on_message(message):
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(">hourly")
-                print(f"\033[34m[{current_time}]: Получил часовую награду")
+                print(f"\033[31m[EnderBot] Получил часовую награду")
                 time.sleep(2)
                 await message.channel.send(">mine all")
-                print(f"\033[34m[{current_time}]: Выкопал все")
+                print(f"\033[31m[EnderBot] Выкопал все")
                 mtn2 = mtn2 + 3600
 
             if mtn33 > mtn22:
                 await message.channel.send(">daily")
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
-                print(f"\033[31m[{current_time}]: Получил дневную награду")
+                print(f"\033[31m[EnderBot] Получил дневную награду")
                 mtn2 = mtn2 + 86400
 
             time.sleep(60)
@@ -259,7 +318,7 @@ async def on_message(message):
     if message.content == ('work'):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начинаю фарм в Unbelievaboat... \n")
+        print(f"\n\033[31m[Unbelievaboat] Начинаю фарм в Unbelievaboat... \n")
 
         while True:
 
@@ -273,14 +332,14 @@ async def on_message(message):
             await message.channel.send("!dep all")  
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"[{current_time}]: заработал ")
-            print(f"\033[33m[{current_time}]: dep all ")
+            print(f"\033[31m[Unbelievaboat] Написал !work ")
+            print(f"\033[31m[Unbelievaboat] Написал !dep all ")
             time.sleep(temps)
 
     if message.content == ('workAll'):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начинаю полную работу в Unbelievaboat... \n")
+        print(f"\n\033[31m[Unbelievaboat] Начинаю полную работу в Unbelievaboat... \n")
 
         while True:
 
@@ -298,24 +357,24 @@ async def on_message(message):
             await message.channel.send("!dep all")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"[{current_time}]: Написал !work ")
-            print(f"\033[34m[{current_time}]: Написал !crime ")
-            print(f"\033[34m[{current_time}]: Написал !slut ")
-            print(f"\033[33m[{current_time}]: Написал !dep all ")
+            print(f"\033[31m[Unbelievaboat] Написал !work ")
+            print(f"\033[31m[Unbelievaboat] Написал !crime ")
+            print(f"\033[31m[Unbelievaboat] Написал !slut ")
+            print(f"\033[31m[Unbelievaboat] Написал !dep all ")
             time.sleep(temps)
             await message.channel.send("!work")
             time.sleep(1)
             await message.channel.send("!dep all")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"[{current_time}]: Написал !work ")
-            print(f"\033[33m[{current_time}]: Написал !dep all ")
+            print(f"\033[31m[Unbelievaboat] Написал !work ")
+            print(f"\033[31m[Unbelievaboat] Написал !dep all ")
             time.sleep(temps)
     
     if message.content == ('bump'):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        print(f"\n[{current_time}:] Начинаю бампить в DISBOARD... \n")
+        print(f"\n\033[31m[DISBOARD]: Начинаю бампить в DISBOARD... \n")
 
         while True:
             # anti ban
@@ -326,7 +385,7 @@ async def on_message(message):
             await message.channel.send("!d bump")
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
-            print(f"[{current_time}]: Успешный бамп! ")
+            print(f"\033[31m[DISBOARD] Успешный бамп! ")
             time.sleep(temps)
 
 
