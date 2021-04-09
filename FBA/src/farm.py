@@ -41,9 +41,6 @@ print('''
 \033[35m===============================================================
 \033[96mЛИСТ КОМАНД
 \033[96m[У ВСЕХ КОМАНД ЕСТЬ АНТИБАН]
-\033[96mEbrawl - фарм ОБЫЧНЫХ ящиков в боте BrawlBox на сервере Every
-\033[96mEbrawlB - фарм БОЛЬШИХ ящиков в боте BrawlBox на сервере Every
-\033[96mEbrawlM - фарм МЕГА ящиков в боте BrawlBox на сервере Every
 \033[96mbrawl - фарм ОБЫЧНЫХ ящиков в боте BrawlBox
 \033[96mbrawlB - фарм БОЛЬШИХ ящиков в боте BrawlBox
 \033[96mbrawlM - фарм МЕГА ящиков в боте BrawlBox
@@ -188,82 +185,6 @@ async def on_message(message):
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
             print(f"\033[96m[BrawlBox]: Открыл мега ящик")
-            time.sleep(temps)
-
-    if message.content == "Ebrawl":
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox на сервере Every используя обычные ящики... \n")
-
-        mtn1 = time.time()
-        mtn2 = mtn1 + 5
-
-        while True:
-
-            # anti ban
-            tempsN = 1
-            add = random.randint(1,2)
-            temps = (tempsN + add)
-    
-            mtn3 = time.time()
-
-            await message.channel.send(".b")
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            print(f"\033[96m[BrawlBox] Открыл обычный ящик")
-            time.sleep(temps)                              #1m
-
-    if message.content == "EbrawlB":
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox на сервере Every используя большие ящики... \n")
-
-        mtn1 = time.time()
-        mtn2 = mtn1 + 5
-
-        while True:
-
-            # anti ban
-            tempsN = 1
-            add = random.randint(1,2)
-            temps = (tempsN + add)
-    
-            mtn3 = time.time()
-
-            await message.channel.send(".b")
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            print(f"\033[96m[BrawlBox] Открыл большой ящик")
-            time.sleep(temps)
-
-    if message.content == "EbrawlM":
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        print(f"\n\033[96m[BrawlBox] Начало фарма в BrawlBox на сервере Every используя мега ящики... \n")
-
-        mtn1 = time.time()
-        mtn2 = mtn1 + 5
-
-        while True:
-
-            # anti ban
-            tempsN = 1
-            add = random.randint(1,2)
-            temps = (tempsN + add)
-    
-            mtn3 = time.time()
-
-            if mtn3 > mtn2:
-                await message.channel.send(".b")
-                now = datetime.now()
-                current_time = now.strftime("%H:%M:%S")
-                print(f"\033[31m[BrawlBox] Открыл мега ящик")
-                mtn2 = mtn2 + 5
-
-            await message.channel.send(".b")
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            print(f"\033[31m[BrawlBox] Открыл мега ящик")
             time.sleep(temps)
 
     if message.content == "ender":
