@@ -3,8 +3,6 @@
 
 > Python Селфбот для фарма в различных ботах.
 
-### [ReadMe](https://github.com/itskek/farmerbot/main/README.md)
-
 
 ## Что вам нужно сделать перед установкой
 
