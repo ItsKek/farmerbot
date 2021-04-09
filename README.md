@@ -34,6 +34,8 @@
 **ItsKek**
 
 * GitHub: [@itskek](https://github.com/itskek)
+* Discord: ItsKek#1954
+* Discord Server: [FARM](https://discord.gg/YT7VnsYCyg)
 
 
 ## Покажи свою поддержку
