@@ -292,7 +292,7 @@ async def on_message(message):
             print(f"\033[31m[Unbelievaboat] Написал !dep all ")
             time.sleep(temps)
     
-    if message.content == ('bump'):
+    if message.content == ('disboard'):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         print(f"\n\033[31m[DISBOARD]: Начинаю бампить в DISBOARD... \n")
